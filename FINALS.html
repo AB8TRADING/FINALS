@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AB8 TRADING</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #0044cc, #0088ff);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(0, 0, 50, 0.9);
+            color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            transition: 0.5s;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        h1, h2, h3 {
+            color: #ffdd44;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            background: #ffd700;
+            color: #003366;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+        }
+        .button:hover {
+            background: #ffcc00;
+            transform: scale(1.05);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 280px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background: rgba(0, 0, 50, 0.9);
+            color: white;
+            font-size: 14px;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="AB8_Trading.jpg" alt="AB8 Trading Logo" style="height: 60px; vertical-align: middle;"> AB8 TRADING
+    </header>
+    
+    <section class="animate" id="home">
+        <div class="container">
+            <h1>Welcome to AB8 Trading</h1>
+            <p>AB8 Trading is your trusted partner in providing top-quality packaging materials, furniture for home and office, and efficient junk hauling services. We take pride in delivering solutions for businesses and individuals alike.</p>
+            <a href="#contact" class="button">Contact Us</a>
+        </div>
+    </section>
+
+    <section class="animate" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>AB8 Trading is a dynamic business offering a wide range of essential products and services:</p>
+            <ul>
+                <li>High-quality packaging materials for commercial and personal use.</li>
+                <li>Durable and stylish furniture suited for home and office settings.</li>
+                <li>Comprehensive hauling services for scrap materials and junk removal.</li>
+            </ul>
+            <p>We believe in sustainability, efficiency, and excellent customer service. Our goal is to help businesses and individuals find reliable solutions for their needs.</p>
+            <h3>Our Work</h3>
+            <p>Below are some images showcasing our products and services. Click the button to upload your own images related to AB8 Trading.</p>
+            <div class="gallery">
+                <img src="business_image1.jpg" alt="Business Image 1">
+                <img src="business_image2.jpg" alt="Business Image 2">
+                <img src="business_image3.jpg" alt="Business Image 3">
+            </div>
+            <input type="file" id="upload" multiple>
+            <button onclick="uploadImages()" class="button">Upload Images</button>
+        </div>
+    </section>
+
+    <section class="animate" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Reach out to us via:</p>
+            <p>Email: princeenavalta@gmail.com</p>
+            <p>Mobile: 0956-415-8289</p>
+            <div class="social">
+                <a href="https://www.facebook.com/ab8trading" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function uploadImages() {
+            let input = document.getElementById("upload");
+            let gallery = document.querySelector(".gallery");
+            Array.from(input.files).forEach(file => {
+                let img = document.createElement("img");
+                img.src = URL.createObjectURL(file);
+                img.alt = "Uploaded Image";
+                gallery.appendChild(img);
+            });
+        }
+    </script>
+
+    <footer>
+        Established 2006 &mdash; AB8 TRADING
+    </footer>
+</body>
+</html>
